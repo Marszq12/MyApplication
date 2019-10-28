@@ -18,9 +18,14 @@ public class MyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my);
         ButterKnife.bind(this);
 
-        SharedPreferences my_sp = getSharedPreferences("my_sp", MODE_PRIVATE);
+        /*SharedPreferences my_sp = getSharedPreferences("my_sp", MODE_PRIVATE);
         String input1=my_sp.getString("input1_key","");
-        String input2=my_sp.getString("input2_key","");
+        String input2=my_sp.getString("input2_key","");*/
+
+
+        String input1=SpTool.getString("input1_key","");
+        String input2=SpTool.getString("input2_key","");
+
         textView.setText(input1+input2);
     }
 }

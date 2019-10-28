@@ -26,13 +26,18 @@ public class MainActivity extends AppCompatActivity {
     }
     @OnClick(R.id.tv_button)
     void jump(){
-        SharedPreferences my_sp = getSharedPreferences("my_sp", MODE_PRIVATE);
+        String input1=editText1.getText().toString();
+        String input2=editText2.getText().toString();
+        SpTool.putString("input1_key",input1);
+        SpTool.putString("input2_key",input2);
+
+        /*SharedPreferences my_sp = getSharedPreferences("my_sp", MODE_PRIVATE);
          SharedPreferences.Editor edit=my_sp.edit();
         String input1=editText1.getText().toString();
         String input2=editText2.getText().toString();
         edit.putString("input1_key",input1);
         edit.putString("input2_key",input2);
-        edit.apply();
+        edit.apply();*/
 
         Intent intent=new Intent(MainActivity.this,MyActivity.class);
         startActivity(intent);
